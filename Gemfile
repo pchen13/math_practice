@@ -8,7 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'haml'
+gem 'haml-rails'
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0'
 
 group :doc do
