@@ -17,7 +17,7 @@ module Practice
   
   module Calculation
     private
-    def integer_cal(operator, a, b)
+    def integer_calc(operator, a, b)
       if operator == "÷/"
         str = eval(a.to_s + "/" + b.to_s).to_s + ", "
         str += eval(a.to_s + "%" + b.to_s).to_s
