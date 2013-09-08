@@ -19,4 +19,12 @@ describe Practice do
     end
   end
   
+  describe "generator" do
+    include Practice::Generator
+    let(:p) { FactoryGirl.build(:preference) }
+    let(:list) { generate(p) }
+    it { list.should be_a Array }
+    it { list.size.should ==  p.size }
+  end
+  
 end

@@ -27,4 +27,29 @@ module Practice
     end
   end
   
+  module Generator
+    include Operator
+    MAX_TRY = 10
+    # todo: handle divide by 0 for division
+    def generate(preference)
+      @@preference = preference
+      eval(preference.type+"_generator")
+    end
+    private
+    def integer_generator
+      qs = []
+      try = 0
+      p = @@preference
+      (0...p.size).each do
+        rand_op = p.rand_operator
+        op = operator(rand_op, false)
+        n1 = p.rand_field(0)
+        n2 = p.rand_field(1)
+        q = Question.new(p.type)
+        q.insert(n1, rand_op).insert(n2)
+        qs << q
+      end
+      qs
+    end
+  end
 end
